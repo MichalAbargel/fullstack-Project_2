@@ -1,0 +1,36 @@
+*{
+    font-family: 'Itim', cursive;
+}
+
+.container {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+    max-width: 600px;
+    max-height: 600px;
+}
+.tile {
+    border: 1px solid white;
+    min-width: 150px;
+    min-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 200px;
+    cursor: pointer;
+}
+.playerX {
+    color: #09C372;
+}
+
+.playerO {
+    color: #498AFB;
+}
+
+.Tic-Tac-Toe-title{
+    margin: 20px 20px 20px 20px;
+    font-size: 50px;
+    color:white;
+    text-align: center;
+}

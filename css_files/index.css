@@ -1,54 +1,48 @@
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    font-family: 'Itim', cursive;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
 
-    /*gallery - images */
-  .container{
-      display: flex;
-      align-items:center;
-      justify-content: center;
-      flex-direction: row;
-      margin: 20px 100px 100px 100px;
-      flex-wrap: wrap;
-      direction: rtl;
+  .header-area {
+    background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.5)),
+    url(https://images.unsplash.com/photo-1528353518104-dbd48bee7bc4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80);
+    background-position: center center;
+    background-size: cover;
   }
-  .gallery-item {
-    margin: 10px;
-    flex-flow: row;
-    border: 0.5px solid #ccc;
-    float:right;
-    width: 400px;
-    height: auto;
-    position: relative;
-  }
-  
-  .gallery-item:hover {
-      border: 0.5px solid blue;
-  }
-  .gallery-item.image-style{
-      width: 100%;
-      height: auto;
-  }
-  .gallery-item img {
+
+
+  .container-intro {
     width: 100%;
-    height: auto;
-    max-height: min-content;
-    cursor: pointer;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 15px;
   }
-  
-  .gallery-item.image-style img{
-      transition: .10s ease-in-out;
-      transform: scale(1.2);
-  }
-  
-  .desc {
-    padding: auto;
-    text-align: center;
-    font-weight: lighter;
-    color: rgb(58, 63, 229);
-  }
-  
-  .desc h1:hover{
-      color: lightblue;
-  }
-  
+
+  /* intro-area css start */
+.intro-area {
+  height: calc(100vh - 61px);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+.intro-area h2 {
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 50px;
+  margin-bottom: 25px;
+}
+.intro-area p {
+  font-size: 18px;
+}
+/* intro-area css end */
 
   
   @media screen and (max-width: 600px) {
@@ -63,6 +57,15 @@
           height: auto;
           position: relative;
         }
+        .container-intro {
+          max-width: 720px;
+        }
+        .intro-area h2 {
+          font-size: 36px;
+          margin-bottom: 15px;
+        } 
   }
+
+    
   
   

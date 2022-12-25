@@ -4,6 +4,10 @@
     <title>אתר משחקים</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css_files/Tic-Tac-Toe.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <script src="../js_files/Tic-Tac-Toe.js"></script>
     <link rel="stylesheet" href="../css_files/index.css">
     <link rel="stylesheet" href="../css_files/nav.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -25,10 +29,30 @@
         </div>
     </nav>
 
+    <section class="Tic-Tac-Toe-title">
+        <h1>Tic Tac Toe</h1>
+    </section>
+
     <div class="intro-area">
         <div class="container-intro">
-          <h2>Welcome To Our Site</h2>
-          <p>Here you can find a lot of fascinating games</p>
+            <section class="display">
+                Player <span class="display-player playerX">X</span>'s turn
+            </section>
+            <section class="container">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </section>
+            <section class="display announcer hide"></section>
+            <section class="controls">
+                <button id="reset">Reset</button>
+            </section>
         </div>
       </div>
 </div>

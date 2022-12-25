@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>אתר משחקים</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css_files/Games.css">
+    <link rel="stylesheet" href="../css_files/index.css">
+    <link rel="stylesheet" href="../css_files/nav.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src = "../js_files/index.js"></script>
+</head>
+<body>
+<div class="header-area">
+    <div id="title_user">
+        <h2 id="user">Hello guest!</h2>
+    </div>
+    <nav >
+        <div class="topnav" id="myTopnav">
+            <a id="user" href="../html_files/index.html">Home</a>
+            <a id="user" href="./login.html">login</a>
+            <a href="../html_files/Games.html">Games</a>
+            <a href="#">Score</a>
+            <a href="#">Actore Satae</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </nav>
+
+    <div class="intro-area">
+        <div id="gaming">
+            <div class="container">
+                <a href="../html_files/Tic-Tac-Toe.html" alt="">
+                    <div class="gallery-item" style="background-image: url(../images/image1.jpg);">
+                        <div class="desc" >
+                            <h1>משחק 1</h1>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" alt="">
+                    <div class="gallery-item" style="background-image: url(../images/image2.jpg);">
+                        <div class="desc">
+                            <h1>משחק 2</h1>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" alt="">
+                    <div class="gallery-item" style="background-image: url(../images/image3.jpg);">
+                        <div class="desc">
+                            <h1>בתהליך פיתוח</h1>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" alt="">
+                    <div class="gallery-item" style="background-image: url(../images/image4.jpg);">
+                        <div class="desc">
+                            <h1>בתהליך פיתוח</h1>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+      </div>
+</div>
+    
+    <script>
+        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
