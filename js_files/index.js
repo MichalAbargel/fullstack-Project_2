@@ -5,5 +5,6 @@ window.onload= function(){
 function check_local(){
     if(localStorage["user_name"]){
         document.querySelector("#user").innerHTML = `Hello ${localStorage["user_name"]}!`
+        document.querySelector("#login").innerHTML = `Logout`
     }
 }

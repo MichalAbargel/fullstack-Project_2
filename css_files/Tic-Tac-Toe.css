@@ -1,9 +1,11 @@
 *{
     font-family: 'Itim', cursive;
+
 }
 
 .container {
     margin: 0 auto;
+    margin-top: 50px;
     display: grid;
     grid-template-columns: 33% 33% 33%;
     grid-template-rows: 33% 33% 33%;
@@ -12,16 +14,16 @@
 }
 .tile {
     border: 1px solid white;
-    min-width: 150px;
-    min-height: 150px;
+    min-width: 120px;
+    min-height: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 200px;
+    font-size: 150px;
     cursor: pointer;
 }
 .playerX {
-    color: #09C372;
+    color: rgb(235, 82, 235);
 }
 
 .playerO {
@@ -29,8 +31,35 @@
 }
 
 .Tic-Tac-Toe-title{
-    margin: 20px 20px 20px 20px;
     font-size: 50px;
-    color:white;
+    color:rgb(250, 198, 250);;
     text-align: center;
+}
+
+.Tic-Tac-Toe-title h1:hover{
+    color:white;
+}
+.controls{
+    margin: 20px;
+}
+.controls button{
+    font-size: 25px;
+    margin: 10px;
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+    background-color: rgb(250, 198, 250);
+}
+
+.announcer{
+    margin: 20px;
+    font-size: 25px;
+}
+
+.display{
+    margin-bottom: 50px;
+    font-size: 30px;
+}
+.display-player{
+    font-size: 40px;
 }

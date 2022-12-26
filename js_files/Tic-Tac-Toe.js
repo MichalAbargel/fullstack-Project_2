@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', () => {
         playerDisplay.classList.remove(`player${currentPlayer}`);
         currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
         playerDisplay.innerText = currentPlayer;
-        playerDisplay.classList.add(`player ${currentPlayer}`);
+        playerDisplay.classList.add(`player${currentPlayer}`);
         
     }
 
@@ -110,6 +110,8 @@ window.addEventListener('DOMContentLoaded', () => {
         tile.addEventListener('click', () => userAction(tile, index));
     });
 
-    resetButton.addEventListener('click', resetBoard);
+    resetButton.addEventListener('click', () => resetBoard());
+
+    party.confetti(document);
 
   });

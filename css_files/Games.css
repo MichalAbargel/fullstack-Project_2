@@ -1,3 +1,7 @@
+  *{
+    font-family: 'Itim', cursive;
+
+  }
   /*gallery - images */
   .container{
     display: flex;
