@@ -2,23 +2,34 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Itim', cursive;
+   
   }
   body {
-    background-color: #f4c531;
+    background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.5)),
+    url(https://images.unsplash.com/photo-1528353518104-dbd48bee7bc4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80);
+    background-position: center center;
+    background-size: cover;
+  }
+  #title{ 
+    color:aliceblue;
+    font-size: 40px;
+    text-align: center;
+    margin-top:70px;
   }
   .container {
     font-size: 16px;
-    background-color: #ffffff;
+    background-color: aliceblue;
     width: 90vw;
     max-width: 34em;
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 50%;
+    top: 60%;
     left: 50%;
     padding: 3em;
     border-radius: 0.6em;
     box-shadow: 0 1.2em 2.4em rgba(111, 85, 0, 0.25);
+    color:rgb(3, 69, 84);
   }
   #options-container {
     text-align: center;
@@ -26,16 +37,16 @@
   #options-container div {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 1.2em 0 2.4em 0;
   }
   #options-container button {
     padding: 0.6em 1.2em;
-    border: 3px solid #000000;
+    border: 3px solid rgb(3, 69, 84);
     background-color: #ffffff;
-    color: #000000;
-    border-radius: 0.3em;
-    text-transform: capitalize;
+    color: rgb(3, 69, 84);
+    border-radius: 50%;
+    text-transform:capitalize;
   }
   #options-container button:disabled {
     border: 3px solid #808080;
@@ -43,9 +54,9 @@
     background-color: #efefef;
   }
   #options-container button.active {
-    background-color: #f4c531;
-    border: 3px solid #000000;
-    color: #000000;
+    background-color:peachpuff;
+    border: 3px solid rgb(3, 69, 84);
+    color: rgb(3, 69, 84);
   }
   .letter-container {
     width: 100%;
@@ -83,7 +94,8 @@
   canvas {
     display: block;
     margin: auto;
-    border: 1px solid #000000;
+    border: 1px solid rgb(3, 69, 84);
+    color: rgb(3, 69, 84);
   }
   .hide {
     display: none;
@@ -102,9 +114,9 @@
   #new-game-button {
     font-size: 1.25em;
     padding: 0.5em 1em;
-    background-color: #f4c531;
-    border: 3px solid #000000;
-    color: #000000;
+    background-color: peachpuff;
+    border: 3px solid rgb(3, 69, 84);
+    color: rgb(3, 69, 84);
     border-radius: 0.2em;
   }
   .win-msg {
@@ -113,3 +125,8 @@
   .lose-msg {
     color: #fe5152;
   }
+  header {
+    width: 100%;
+    position: fixed;    
+}
+

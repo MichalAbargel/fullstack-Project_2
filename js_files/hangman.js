@@ -1,4 +1,5 @@
 //Initial References
+const titleSection=document.getElementById("title");
 const letterContainer = document.getElementById("letter-container");
 const optionsContainer = document.getElementById("options-container");
 const userInputSection = document.getElementById("user-input-section");
