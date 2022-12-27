@@ -9,11 +9,26 @@
     color: white;
 }
 .score-bar{
-    margin: 150px auto;
+    margin: 0 auto;
     text-align: center;
 }
 .score-bar progress{
-    /*Reset the default appearance */
     width: 900px;
-    height: 50px;
+    height: 70px;
 }
+
+.score-number{
+    color:violet;
+}
+
+.rating-stars{
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    font-size: 65px;
+}
+.checked {
+    color: plum;
+  }
+ 
+  

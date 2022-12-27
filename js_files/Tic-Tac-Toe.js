@@ -4,6 +4,11 @@ window.addEventListener('DOMContentLoaded', () => {
     const playerDisplay = document.querySelector('.display-player');    
     const resetButton = document.querySelector('#reset');
     const announcer = document.querySelector('.announcer');
+    let score = 0;
+    if (localStorage["score_game_1"] != null){
+      score = parseInt(localStorage["score_game_1"]);
+    }
+    let points = 10;
 
     let board = ['', '', '', '', '', '', '', '', ''];
     let currentPlayer = 'X';
@@ -67,6 +72,8 @@ window.addEventListener('DOMContentLoaded', () => {
           }
           if (a === b && b === c) {
             roundWon = true;
+            score = score + points;
+            localStorage["score_game_1"] = score
             break;
           }
         }

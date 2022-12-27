@@ -4,14 +4,13 @@
     <title>אתר משחקים</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css_files/index.css">
     <link rel="stylesheet" href="../css_files/nav.css">
     <link rel="stylesheet" href="../css_files/score.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src = "../js_files/index.js"></script>
 </head>
 <body>
-    
 <div class="header-area">
     <nav >
         <div class="topnav" id="myTopnav">
@@ -25,13 +24,20 @@
             </a>
         </div>
     </nav>
-
+    <script src="../js_files/index.js"></script>
     <div class="score-continer">
         <div class="points">
-            <h1>You have now 0 points</h1>
+            <h1>You have now <strong id="score-num" class="score-number">0</strong> points</h1>
         </div>
         <div class="score-bar">
-            <progress id="progress-score" value="50" max="100"> 50% </progress>
+            <progress id="progress-score" value="0" max="100"></progress>
+        </div>
+        <div class="rating-stars">
+            <div  class="fa fa-star"></div>
+            <div  class="fa fa-star"></div>
+            <div  class="fa fa-star"></div>
+            <div  class="fa fa-star"></div>
+            <div  class="fa fa-star"></div>
         </div>
     </div>
     <div class="intro-area">
@@ -50,7 +56,7 @@
             }
         }
     </script>
-
+    <script src = "../js_files/score.js"></script>
 </body>
 
 </html>
