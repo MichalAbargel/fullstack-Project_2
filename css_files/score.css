@@ -21,6 +21,22 @@
     color:violet;
 }
 
+.game{
+    margin: 50px auto;
+    text-align: center;
+}
+
+.game-title{
+    color: plum;
+    padding: 15px;
+    font-size: 20px;
+}
+.score-number-per-game{
+    font-size: 25px;
+    color: white;
+
+}
+
 .rating-stars{
     margin: 50px auto;
     padding: 20px;
@@ -28,7 +44,7 @@
     font-size: 65px;
 }
 .checked {
-    color: plum;
-  }
+    color: orange;
+}
  
   

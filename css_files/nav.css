@@ -6,9 +6,9 @@
     margin-bottom: 50px; */
     list-style-type: none;
     margin: 0;
+    margin-bottom: 50px;
     padding: 0;
     overflow: hidden;
-    background-color:rgb(3, 69, 84);
     text-align: center;
 
   }

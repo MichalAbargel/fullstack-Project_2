@@ -8,7 +8,7 @@
     align-items:center;
     justify-content: center;
     flex-direction: row;
-    margin: 20px 100px 100px 100px;
+    margin: 0px 100px 100px 100px;
     flex-wrap: wrap;
     direction: rtl;
 }

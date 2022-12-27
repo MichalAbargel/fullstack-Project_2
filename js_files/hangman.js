@@ -7,6 +7,12 @@ const newGameContainer = document.getElementById("new-game-container");
 const newGameButton = document.getElementById("new-game-button");
 const canvas = document.getElementById("canvas");
 const resultText = document.getElementById("result-text");
+//add point to local
+let score = 0;
+    if (localStorage["score_game_2"] != null){
+      score = parseInt(localStorage["score_game_2"]);
+    }
+    let points = 10;
 
 //Options values for buttons
 let options = {
@@ -124,6 +130,10 @@ const initializer = () => {
               resultText.innerHTML = `<h2 class='win-msg'>You Win!!</h2><p>The word was <span>${chosenWord}</span></p>`;
               //block all buttons
               blocker();
+              
+              //add score to local
+              score = score + points;
+              localStorage["score_game_2"] = score
             }
           }
         });
