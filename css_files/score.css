@@ -1,0 +1,19 @@
+.score-continer{
+    margin: 30px auto;
+    padding: auto;
+}
+.points{
+    margin: 80px auto;
+    font-size: 25px;
+    text-align: center;
+    color: white;
+}
+.score-bar{
+    margin: 150px auto;
+    text-align: center;
+}
+.score-bar progress{
+    /*Reset the default appearance */
+    width: 900px;
+    height: 50px;
+}
