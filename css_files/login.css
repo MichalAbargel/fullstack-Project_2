@@ -1,5 +1,8 @@
 body {
-    background-color: #4b4a4e;
+  background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.5)),
+  url(https://images.unsplash.com/photo-1528353518104-dbd48bee7bc4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80);
+  background-position: center center;
+  background-size: cover;
     font-size: 1.6rem;
     font-family: "Open Sans", sans-serif;
     color: #2b3e51;
@@ -60,7 +63,7 @@ body {
   
   
   input[type="text"],
-  input[type="email"] {
+  input[type="password"] {
     width: 100%;
     padding: 0 0 0 10px;
     margin: 0;
@@ -76,27 +79,27 @@ body {
     background: none;
   }
   input[type="text"]:focus,
-  input[type="email"]:focus {
+  input[type="password"]:focus {
     border-color: #3ca9e2;
   }
   input[type="text"]:focus:invalid,
-  input[type="email"]:focus:invalid {
+  input[type="password"]:focus:invalid {
     color: #cc1e2b;
     border-color: #cc1e2b;
   }
   input[type="text"]:valid ~ .validation,
-  input[type="email"]:valid ~ .validation {
+  input[type="password"]:valid ~ .validation {
     display: block;
     border-color: #0C0;
   }
   input[type="text"]:valid ~ .validation span,
-  input[type="email"]:valid ~ .validation span {
+  input[type="password"]:valid ~ .validation span {
     background: #0C0;
     position: absolute;
     border-radius: 6px;
   }
   input[type="text"]:valid ~ .validation span:first-child,
-  input[type="email"]:valid ~ .validation span:first-child {
+  input[type="password"]:valid ~ .validation span:first-child {
     top: 30px;
     left: 14px;
     width: 20px;
@@ -105,7 +108,7 @@ body {
             transform: rotate(-45deg);
   }
   input[type="text"]:valid ~ .validation span:last-child,
-  input[type="email"]:valid ~ .validation span:last-child {
+  input[type="password"]:valid ~ .validation span:last-child {
     top: 35px;
     left: 8px;
     width: 11px;
