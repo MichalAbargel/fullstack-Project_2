@@ -5,18 +5,20 @@ window.onload= function(){
 
 function declearViewEvente(){
     let user = document.getElementById("username");
-    let mailAdd = document.getElementById("email");
+    let userPassword = document.getElementById("password");
     let log_in = document.querySelector("#login");
 
     log_in.addEventListener("click", function(){
         user_name = user.value;
-        user_mail = mailAdd.value;
+        user_password = userPassword.value;
         if(localStorage.getItem("user_name") === user_name){
-            if (localStorage.getItem("mail_add")=== user_mail){
+            if (localStorage.getItem("user_password")=== user_password){
                 alert("welcome back!");
+                window.open(
+                    "../html_files/index.html", "_blank");
             }
             else{
-                alert("mail address is not correct!")
+                alert("password is not correct!")
             }
         }
         else {
