@@ -134,6 +134,7 @@ const initializer = () => {
               //add score to local
               score = score + points;
               localStorage["score_game_2"] = score
+              updateHistory();
             }
           }
         });
@@ -245,6 +246,31 @@ const drawMan = (count) => {
   }
 };
 
+function updateHistory(){
+  let current_user = localStorage.getItem('current_user');
+  if (current_user == null) return;
+  current_user = JSON.parse(current_user);
+  if(current_user.user_history.find(item => item[0]=="Hangman") != null){
+    for(let i=0; i< current_user.user_history.length; i++){
+      if(current_user.user_history[i][0]=="Hangman"){
+        current_user.user_history[i][1]= score;
+        break;
+      }
+    }
+  }
+  else{
+    for(let i=0; i< current_user.user_history.length; i++){
+      if(current_user.user_history[i][0]=="Game"){
+        current_user.user_history[i][0]="Hangman";
+        current_user.user_history[i][1]= score;
+        break;
+      }
+    }
+    
+  }
+  
+  localStorage.setItem('current_user',JSON.stringify(current_user));
+}
 //New Game
 newGameButton.addEventListener("click", initializer);
 window.onload = initializer;

@@ -74,6 +74,7 @@ window.addEventListener('DOMContentLoaded', () => {
             roundWon = true;
             score = score + points;
             localStorage["score_game_1"] = score
+            updateHistory();
             break;
           }
         }
@@ -85,6 +86,32 @@ window.addEventListener('DOMContentLoaded', () => {
         }
       
         if (!board.includes("")) announce(TIE);
+      }
+
+      function updateHistory(){
+        let current_user = localStorage.getItem('current_user');
+        if (current_user == null) return;
+        current_user = JSON.parse(current_user);
+        if(current_user.user_history.find(item => item[0]=="Tic-Tac-Toe") != null){
+          for(let i=0; i< current_user.user_history.length; i++){
+            if(current_user.user_history[i][0]=="Tic-Tac-Toe"){
+              current_user.user_history[i][1]= score;
+              break;
+            }
+          }
+        }
+        else{
+          for(let i=0; i< current_user.user_history.length; i++){
+            if(current_user.user_history[i][0]=="Game"){
+              current_user.user_history[i][0]="Tic-Tac-Toe";
+              current_user.user_history[i][1]= score;
+              break;
+            }
+          }
+          
+        }
+        
+        localStorage.setItem('current_user',JSON.stringify(current_user));
       }
 
       const userAction = (tile, index) => {
@@ -116,6 +143,8 @@ window.addEventListener('DOMContentLoaded', () => {
       tiles.forEach( (tile, index) => {
         tile.addEventListener('click', () => userAction(tile, index));
     });
+
+   
 
     resetButton.addEventListener('click', () => resetBoard());
 
