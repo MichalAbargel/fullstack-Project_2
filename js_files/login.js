@@ -24,6 +24,8 @@ function declearViewEvente(){
                 if(data.login_Attempts>0){
                  data.login_Attempts=3
                  localStorage.setItem(user_name, JSON.stringify(data))
+                 localStorage.setItem('current_user', JSON.stringify(data))
+
                  alert("welcome back!");
                  window.open(
                     "../html_files/index.html", "_blank");
