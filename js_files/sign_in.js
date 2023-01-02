@@ -12,7 +12,7 @@ function declearViewEvente(){
         user_name = user.value;
         user_password = userPassword.value;
         user_play = [["Game",0],["Game",0],["Game",0],["Game",0],["Game",0]]
-        current_user = localStorage.getItem('current_user'); 
+        current_user = localStorage.getItem(user_name); 
         if(current_user != null){
             current_user = JSON.parse(current_user);
             if(current_user.name === user_name){
@@ -29,8 +29,9 @@ function declearViewEvente(){
                 login_Attempts:3,
                 user_history:user_play,
             };
-            setCookie('user_name',user_name, 180);
-            localStorage.setItem('current_user',JSON.stringify(addUser));
+            // setCookie('user_name',user_name, 180);
+            localStorage.setItem(user_name, JSON.stringify(addUser));
+            localStorage.setItem('current_user', JSON.stringify(addUser));
             alert("welcome!")
             window.open(
                 "../html_files/index.html", "_blank");
