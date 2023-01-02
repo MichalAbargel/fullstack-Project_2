@@ -11,7 +11,7 @@ function declearViewEvente(){
     sign_in.addEventListener("click", function(){
         user_name = user.value;
         user_password = userPassword.value;
-        user_play = [["Game",0],["Game",0],["Game",0],["Game",0],["Game",0]]
+        user_play = [["Game",0, Date.now()],["Game",0, Date.now()],["Game",0, Date.now()],["Game",0, Date.now()],["Game",0, Date.now()]]
         current_user = localStorage.getItem(user_name); 
         if(current_user != null){
             current_user = JSON.parse(current_user);

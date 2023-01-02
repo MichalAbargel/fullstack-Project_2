@@ -12,7 +12,7 @@ let score = 0;
     if (localStorage["score_game_2"] != null){
       score = parseInt(localStorage["score_game_2"]);
     }
-    let points = 10;
+    let points = 15;
 
 //Options values for buttons
 let options = {
@@ -249,25 +249,26 @@ const drawMan = (count) => {
 function updateHistory(){
   let current_user = localStorage.getItem('current_user');
   if (current_user == null) return;
+  isFull = true;
   current_user = JSON.parse(current_user);
-  if(current_user.user_history.find(item => item[0]=="Hangman") != null){
-    for(let i=0; i< current_user.user_history.length; i++){
-      if(current_user.user_history[i][0]=="Hangman"){
-        current_user.user_history[i][1]= score;
-        break;
-      }
-    }
-  }
-  else{
     for(let i=0; i< current_user.user_history.length; i++){
       if(current_user.user_history[i][0]=="Game"){
-        current_user.user_history[i][0]="Hangman";
-        current_user.user_history[i][1]= score;
+        current_user.user_history[i][0]= "Hangman";
+        current_user.user_history[i][1]= points;
+        date = new Date(Date.now());
+        current_user.user_history[i][2]= date.toUTCString();
+
+        isFull=false;
         break;
       }
     }
+    if(isFull){
+      current_user.user_history[0][0]= "Hangman";
+      current_user.user_history[0][1]= points;
+      date = new Date(Date.now());
+      current_user.user_history[i][2]= date.toUTCString();
+    }
     
-  }
   
   localStorage.setItem('current_user',JSON.stringify(current_user));
 }

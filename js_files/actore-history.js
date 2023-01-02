@@ -8,10 +8,12 @@ function setHistory(){
         user = JSON.parse(localStorage.getItem("current_user"));
         tdGamesList = Array.from(document.querySelectorAll(".tdGame"));
         tdPointsList = Array.from(document.querySelectorAll(".tdPoints"));
+        tdTimeLisrt = Array.from(document.querySelectorAll(".tdTime"));
         for(let i=0; i < user.user_history.length; i++){
             if(user.user_history[i][0] != "Game"){
                 tdGamesList[i].innerHTML = `${user.user_history[i][0]}`;
                 tdPointsList[i].innerHTML = `${user.user_history[i][1]}`;
+                tdTimeLisrt[i].innerHTML = `${user.user_history[i][2]}`;
             }
         }
 
