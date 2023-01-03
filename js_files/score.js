@@ -7,21 +7,20 @@ function updateScore(){
 
     let valScore1;
     let valScore2;
-    if (localStorage.getItem("score_game_1") != null){
-        valScore1 = parseInt(localStorage["score_game_1"]);
-        let score = document.getElementById("score-num-game1");
-        score.innerHTML = `${localStorage["score_game_1"]}`;
+    let user = localStorage.getItem('current_user');
+    if(user != null){
+        user = JSON.parse(user);
+        valScore1 = user.score_game_1;
+        let score1 = document.getElementById("score-num-game1");
+        score1.innerHTML = `${valScore1}`;
+
+        valScore2 = user.score_game_2;
+        let score2 = document.getElementById("score-num-game2");
+        score2.innerHTML = `${valScore2}`;
+
     }
     else{
         valScore1 = 0;
-    }
-
-    if(localStorage.getItem("score_game_2") != null){
-        valScore2 = parseInt(localStorage["score_game_2"]);
-        let score = document.getElementById("score-num-game2");
-        score.innerHTML = `${localStorage["score_game_2"]}`;
-    }
-    else{
         valScore2 = 0;
     }
 

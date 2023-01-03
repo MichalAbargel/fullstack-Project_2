@@ -9,8 +9,10 @@ const canvas = document.getElementById("canvas");
 const resultText = document.getElementById("result-text");
 //add point to local
 let score = 0;
-    if (localStorage["score_game_2"] != null){
-      score = parseInt(localStorage["score_game_2"]);
+let user = localStorage["current_user"];
+    if (user != null){
+      user = JSON.parse(user);
+      score = user.score_game_2;
     }
     let points = 15;
 
@@ -133,8 +135,7 @@ const initializer = () => {
               
               //add score to local
               score = score + points;
-              localStorage["score_game_2"] = score
-              updateHistory();
+              updateHistory(score);
             }
           }
         });
@@ -246,31 +247,31 @@ const drawMan = (count) => {
   }
 };
 
-function updateHistory(){
+function updateHistory(score){
   let current_user = localStorage.getItem('current_user');
   if (current_user == null) return;
   isFull = true;
   current_user = JSON.parse(current_user);
+  current_user.score_game_2 = score;
     for(let i=0; i< current_user.user_history.length; i++){
       if(current_user.user_history[i][0]=="Game"){
         current_user.user_history[i][0]= "Hangman";
         current_user.user_history[i][1]= points;
         date = new Date(Date.now());
         current_user.user_history[i][2]= date.toUTCString();
-
         isFull=false;
         break;
       }
     }
     if(isFull){
-      current_user.user_history[0][0]= "Hangman";
+      current_user.user_history[0][0] = "Hangman";
       current_user.user_history[0][1]= points;
       date = new Date(Date.now());
-      current_user.user_history[i][2]= date.toUTCString();
+      current_user.user_history[0][2]= date.toUTCString();
     }
-    
   
   localStorage.setItem('current_user',JSON.stringify(current_user));
+  localStorage.setItem(current_user.name, JSON.stringify(current_user))
 }
 //New Game
 newGameButton.addEventListener("click", initializer);

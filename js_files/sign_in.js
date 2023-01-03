@@ -27,6 +27,8 @@ function declearViewEvente(){
                 name:user_name,
                 password:user_password,
                 login_Attempts:3,
+                score_game_1: 0,
+                score_game_2:0,
                 user_history:user_play,
             };
             // setCookie('user_name',user_name, 180);

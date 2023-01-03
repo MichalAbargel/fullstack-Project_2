@@ -5,8 +5,9 @@ window.addEventListener('DOMContentLoaded', () => {
     const resetButton = document.querySelector('#reset');
     const announcer = document.querySelector('.announcer');
     let score = 0;
-    if (localStorage["score_game_1"] != null){
-      score = parseInt(localStorage["score_game_1"]);
+    user = localStorage["current_user"];
+    if (user != null){
+      score = JSON.parse(user).score_game_1;
     }
     let points = 10;
 
@@ -87,8 +88,7 @@ window.addEventListener('DOMContentLoaded', () => {
             roundWon = true;
             if (currentPlayer === 'X'){
               score = score + points;
-              localStorage["score_game_1"] = score
-              updateHistory();
+              updateHistory(score);
             }
             break;
           }
@@ -102,11 +102,12 @@ window.addEventListener('DOMContentLoaded', () => {
         if (!board.includes("")) announce(TIE);
       }
 
-      function updateHistory(){
+      function updateHistory(score){
         let current_user = localStorage.getItem('current_user');
         if (current_user == null) return;
         isFull = true;
         current_user = JSON.parse(current_user);
+        current_user.score_game_1 = score;
           for(let i=0; i< current_user.user_history.length; i++){
             if(current_user.user_history[i][0]=="Game"){
               current_user.user_history[i][0]= "Tic-Tac-Toe";
@@ -125,6 +126,7 @@ window.addEventListener('DOMContentLoaded', () => {
           }
         
         localStorage.setItem('current_user',JSON.stringify(current_user));
+        localStorage.setItem(current_user.name, JSON.stringify(current_user))
       }
 
       const userAction = (tile, index) => {
