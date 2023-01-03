@@ -85,9 +85,11 @@ window.addEventListener('DOMContentLoaded', () => {
           }
           if (a === b && b === c) {
             roundWon = true;
-            score = score + points;
-            localStorage["score_game_1"] = score
-            updateHistory();
+            if (currentPlayer === 'X'){
+              score = score + points;
+              localStorage["score_game_1"] = score
+              updateHistory();
+            }
             break;
           }
         }
