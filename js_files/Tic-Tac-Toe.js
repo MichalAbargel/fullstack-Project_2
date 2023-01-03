@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
     let points = 10;
 
     let board = ['', '', '', '', '', '', '', '', ''];
-    let currentPlayer = 'X';
+    let currentPlayer = 'X'; //user-X, computer-O
     let isGameActive = true;
     const PLAYERX_WON = 'PLAYERX_WON';
     const PLAYERO_WON = 'PLAYERO_WON';
@@ -38,12 +38,25 @@ window.addEventListener('DOMContentLoaded', () => {
         board[index] = currentPlayer;
     }
 
+    const randIndex = () =>{
+      let indexComputer = Math.floor(Math.random() * 8);
+      return indexComputer;
+    }
+
     const changePlayer = () => {
         playerDisplay.classList.remove(`player${currentPlayer}`);
         currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
         playerDisplay.innerText = currentPlayer;
         playerDisplay.classList.add(`player${currentPlayer}`);
+
+        if (currentPlayer === 'O'){
+          let indexComputer = randIndex();
+          delay(1000).then(() =>computerAction(tiles[indexComputer], indexComputer));
+        }
         
+    }
+    function delay(time) {
+      return new Promise(resolve => setTimeout(resolve, time));
     }
 
     const announce = (type) => {
@@ -121,6 +134,22 @@ window.addEventListener('DOMContentLoaded', () => {
           changePlayer();
         }
       };
+
+      const computerAction = (tile, index) => {
+        if (isValidAction(tile) && isGameActive) {
+          tile.innerText = currentPlayer;
+          tile.classList.add(`player${currentPlayer}`);
+          updateBoard(index);
+          handleResultValidation();
+          changePlayer();
+        }
+        else{
+          computerIndex = randIndex();
+          computerAction(tiles[computerIndex], computerIndex)
+        }
+
+      };
+      
 
       const resetBoard = () => {
         board = ['', '', '', '', '', '', '', '', ''];
