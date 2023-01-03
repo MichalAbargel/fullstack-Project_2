@@ -1,5 +1,5 @@
 .score-continer{
-    margin: 30px auto;
+    margin: 0px auto;
     padding: auto;
 }
 .points{
@@ -38,8 +38,8 @@
 }
 
 .rating-stars{
-    margin: 50px auto;
-    padding: 20px;
+    margin: 70px auto;
+    margin-bottom: 120px;
     text-align: center;
     font-size: 65px;
 }

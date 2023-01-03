@@ -1,12 +1,23 @@
-.history{
-    margin: 0px 50px 50px 250px;
-    padding: 100px;
+.header-area {
+    margin-bottom: 0px;
+  }
+.actor-state{
+    margin: 0 auto;
+    padding: 0;
+}
+.history-title{
+    margin: 0 auto;
+    padding: 30px;
+    font-size: 70px;
+    text-align: center;
+
+}
+.history-table{
+    margin: 0 auto;
 }
 .styled-table {
     border-collapse: collapse;
-    margin: 25px 0;
     font-size: 25px;
-    font-family: sans-serif;
     width: 800px;
     height: 300px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);

@@ -78,7 +78,6 @@ window.addEventListener('DOMContentLoaded', () => {
             break;
           }
         }
-      
         if (roundWon) {
           announce(currentPlayer === "X" ? PLAYERX_WON : PLAYERO_WON);
           isGameActive = false;
@@ -104,12 +103,11 @@ window.addEventListener('DOMContentLoaded', () => {
             }
           }
           if(isFull){
-            current_user.user_history[0][0]= "Tic-Tac-Toe";
+            current_user.user_history[0][0] = "Tic-Tac-Toe";
             current_user.user_history[0][1]= points;
             date = new Date(Date.now());
-            current_user.user_history[i][2]= date.toString();
+            current_user.user_history[0][2]= date.toUTCString();
           }
-          
         
         localStorage.setItem('current_user',JSON.stringify(current_user));
       }
@@ -148,6 +146,5 @@ window.addEventListener('DOMContentLoaded', () => {
 
     resetButton.addEventListener('click', () => resetBoard());
 
-    party.confetti(document);
 
   });

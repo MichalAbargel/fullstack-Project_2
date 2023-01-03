@@ -33,11 +33,18 @@
   text-align: center;
   color: #fff;
 }
+
+@keyframes text-animation{
+  from {color: black;}
+  to {color: white;}
+}
 .intro-area h2 {
   font-size: 50px;
   font-weight: 300;
   line-height: 50px;
   margin-bottom: 25px;
+  animation-name: text-animation;
+  animation-duration: 1s;
 }
 .intro-area p {
   font-size: 18px;
